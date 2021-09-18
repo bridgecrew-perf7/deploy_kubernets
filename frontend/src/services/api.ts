@@ -6,7 +6,7 @@ class ApiClass {
     return response.data;
   }
   async GetTodo() {
-    return this._RequestApi("/todo");
+    return this._RequestApi("todo");
   }
 }
 
