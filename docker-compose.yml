@@ -6,12 +6,12 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - REACT_APP_API_URL=http://192.168.0.172:8000
+      - API_URL=http://api:8000
   api:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/app
+    build: ./backend/
+    command: gunicorn --bind 0.0.0.0:8000 core.wsgi
+    expose:
+      - 8000
     ports:
       - 8000:8000
     depends_on:
