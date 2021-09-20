@@ -6,7 +6,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - API_URL=http://localhost:8000
+      - API_URL=http://api:8000
   api:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
