@@ -11,7 +11,7 @@ export default function Home({ response }: HomeProps) {
   const [server, setserver] = useState(false);
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/todo`)
+      .get(`${process.env.API_URL}/todo`)
       .then((r) => {
         if (r?.data?.success) {
           setserver(true);
